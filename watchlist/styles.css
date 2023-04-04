@@ -36,6 +36,7 @@ section {
     font-size: 2em;
     color: #fff;
     text-align: center;
+    margin-bottom: 0px;
 }
 
 .inputbox {
@@ -90,18 +91,33 @@ button {
     font-size: 1em;
     font-weight: 600;
     color: black;
+    margin-bottom: 15px;
 }
 
-tr {
-    background-color: #f2f2f2;
+
+table {
+    width: 500px;
+    background-color: #466368;
+    background: radial-gradient(#648880, #293f50);
+    border-radius: 20px;
+    border: 0;
+    outline: none;
+    color: #f2f2f2;
 }
 
 td {
-    background-color: #f2f2f2;
+    color: #f2f2f2;
+
+}
+
+th {
+    color: #f2f2f2;
+
 }
 
 ion-icon {
     font-size: 25px;
+    cursor: pointer;
 }
 
 .form-group {
