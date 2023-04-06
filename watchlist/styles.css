@@ -1,9 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Comfortaa');
+
+
+/*
+Things to update and add
+    new background -- DONE
+    cohesive "theme" of design -- sorta
+    floating blob following mouse [[ this would only work on web? how do to on mobile? ontouchmove in js? ]] 
+    fix the input so that the title doesn't get too close when the field is filled
+    status messages - add styling and fit rest of theme
+    styling for the title of the table/movie list
+
+*/
 
 * {
     margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
+    font-family: Comfortaa;
 }
 
 section {
@@ -13,7 +25,9 @@ section {
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    background: url("../images/movies_background.jpeg")no-repeat;
+    background: #648880;
+    background: linear-gradient(to right, #f6F1d3, #648880, #293f50);
+    /*background: url("../images/movies_background.jpeg")no-repeat;*/
     background-position: center;
     background-size: cover;
 }
@@ -34,6 +48,7 @@ section {
 
 .formheading {
     font-size: 2em;
+    font-family: Comfortaa;
     color: #fff;
     text-align: center;
     margin-bottom: 0px;
@@ -50,7 +65,7 @@ section {
     position: absolute;
     top: 50%;
     left: 5px;
-    transform: translateY(-50%);
+    transform: translateY(-80%);
     color: #fff;
     font-size: 1.25em;
     pointer-events: none;
@@ -58,7 +73,11 @@ section {
 }
 
 input:focus~label {
-    top: -5px;
+    top: -4px;
+}
+
+.input-title {
+    padding-bottom: 5px;
 }
 
 .inputbox input {
@@ -116,9 +135,17 @@ th {
 
 }
 
-ion-icon {
+.ion-icon {
     font-size: 25px;
     cursor: pointer;
+}
+
+.delete-icon {
+    cursor: pointer;
+}
+
+.input-icon {
+    cursor: default;
 }
 
 .form-group {
@@ -135,4 +162,16 @@ ion-icon {
 
 .header1 {
     color: #f2f2f2;
+}
+
+.list {
+    justify-content: center;
+    flex: auto;
+}
+
+h2 {
+    text-align: center;
+    font-family: Comfortaa;
+    padding-top: 5px;
+
 }
