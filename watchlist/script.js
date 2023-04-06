@@ -1,8 +1,8 @@
 class Movie {
-    constructor(title, director, year) {
+    constructor(title, streaming, date) {
         this.title = title
-        this.director = director
-        this.year = year
+        this.streaming = streaming
+        this.date = date
     }
 }
 
@@ -10,13 +10,13 @@ class Movie {
 const defaultMovies = [
     {
         title: 'Jurrasic Park',
-        director: 'John Doe',
-        year: '1990'
+        streaming: 'Peacock',
+        date: '3/1/23'
     },
     {
-        title: 'The Dead Pool',
-        director: 'Mathew Albison',
-        year: '2014'
+        title: 'The Godfather',
+        streaming: 'Amazon',
+        date: '3/13/23'
     }
 ]
 
@@ -37,8 +37,8 @@ class UI {
         const row = document.createElement('tr')
         row.innerHTML = `
             <td>${movie.title}</td>
-            <td>${movie.director}</td>
-            <td>${movie.year}</td>
+            <td>${movie.streaming}</td>
+            <td>${movie.date}</td>
             <td><ion-icon class="ion-icon" name="close-circle-outline"></ion-icon> </td>`
         list.appendChild(row)
 
@@ -53,15 +53,15 @@ class UI {
     static deleteMovie(deleteIcon) {
         const row = deleteIcon.parentElement.parentElement;
         const title = row.querySelector('td:first-child').textContent;
-        const director = row.querySelector('td:nth-child(2)').textContent;
-        const year = row.querySelector('td:nth-child(3)').textContent;
+        const streaming = row.querySelector('td:nth-child(2)').textContent;
+        const date = row.querySelector('td:nth-child(3)').textContent;
 
         //remove the movie object from local storage
         const index = UI.movies.findIndex(
             (movie) =>
                 movie.title === title &&
-                movie.director === director &&
-                movie.year === year
+                movie.streaming === streaming &&
+                movie.date === date
         );
         if (index !== -1) {
             UI.movies.splice(index, 1);
@@ -71,8 +71,8 @@ class UI {
     }
     static clearFields() {
         document.querySelector('#title').value = "";
-        document.querySelector('#director').value = "";
-        document.querySelector('#year').value = "";
+        document.querySelector('#streaming').value = "";
+        document.querySelector('#date').value = "";
     }
     static showAlert(message, className) {
         const div = document.createElement('div')
@@ -87,8 +87,8 @@ class UI {
         movieList.forEach((row) => {
             const movie = {
                 title: row.cells[0].textContent,
-                director: row.cells[1].textContent,
-                year: row.cells[2].textContent
+                streaming: row.cells[1].textContent,
+                date: row.cells[2].textContent
             }
             movies.push(movie)
         })
@@ -107,15 +107,15 @@ function addAMovie(e) {
     e.preventDefault()
     //get form values
     const title = document.querySelector('#title').value;
-    const director = document.querySelector('#director').value;
-    const year = document.querySelector('#year').value;
+    const streaming = document.querySelector('#streaming').value;
+    const date = document.querySelector('#date').value;
 
-    if (!title || !director || !year) {
+    if (!title || !streaming || !date) {
         UI.showAlert("Please enter correct details", "danger")
         return
     }
     // instantiate a new book object
-    const movie = new Movie(title, director, year)
+    const movie = new Movie(title, streaming, date)
     // Add book object to UI
     UI.addMovieToList(movie)
     UI.showAlert("Movie Added", 'success')
