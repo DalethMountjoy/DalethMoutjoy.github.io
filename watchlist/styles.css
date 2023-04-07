@@ -32,6 +32,10 @@ section {
     background-size: cover;
 }
 
+.img-logo {
+    width: 400px;
+}
+
 .formbox {
     position: relative;
     width: 400px;
