@@ -16,9 +16,10 @@
             2 buttons at the bottom -- add a movie / show list
                 update buttons (expanding? some animation?)
                 dig into this codepen to try to recreate
-                https://codepen.io/team/jotform/pen/XWmqoMp
-            
-
+                https://codepen.io/team/jotform/pen/XWmqoMp\
+        Update the text to have effects
+            https://codepen.io/daleth_mountjoy/pen/BaOXGNj
+        move this list to notion?
 -->
 
 <!DOCTYPE html>
@@ -50,16 +51,16 @@
                         <label>Title</label>
                     </div>
                     <div class="inputbox">
-                        <ion-icon class="input-icon" name="megaphone-outline"></ion-icon>
-                        <input class="input-title" type="text" name="" id="director">
-                        <label>Director</label>
+                        <ion-icon class="input-icon" name="caret-forward-outline"></ion-icon>
+                        <input class="input-title" type="text" name="" id="streaming">
+                        <label>Where to Watch</label>
                     </div>
                     <div class="inputbox">
-                        <ion-icon class="input-icon" name="calendar-clear-outline"></ion-icon>
-                        <input class="input-title" type="text" name="" id="year">
-                        <label>Year</label>
+                        <ion-icon class="input-icon" name="finger-print-outline"></ion-icon>
+                        <input class="input-title" type="text" name="" id="genre">
+                        <label>Genre</label>
                     </div>
-                    <button type="submit">Add Movie</button>
+                    <button class="btn" type="submit">Add Movie</button>
                 </form>
             </div>
         </div>
@@ -70,8 +71,8 @@
     <thead>
         <tr>
             <th>Title</th>
-            <th>Director</th>
-            <th>Year</th>
+            <th>Streaming</th>
+            <th>Genre</th>
             <th></th>
         </tr>
     </thead>
