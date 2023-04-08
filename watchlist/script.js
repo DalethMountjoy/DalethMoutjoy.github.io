@@ -105,7 +105,6 @@ UI.displayMovies()
 
 
 // Event: Add a movie
-// document.querySelector('#movie-form').addEventListener('submit', addAMovie, false)
 document.querySelector('#movie-form button[type="submit"]').addEventListener('click', addAMovie, false)
 function addAMovie(e) {
     //prevent actual submission
